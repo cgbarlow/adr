@@ -120,11 +120,11 @@ This feature request proposes adding an **enhanced WH(Y) ADR mode** to Claude-Fl
 
 | Capability | Description | Specification |
 |------------|-------------|---------------|
-| WH(Y) Statement Format | Structured 6-part decision statement | [SPEC-CF3-001-A](./specs/SPEC-CF3-001-A-WHY-Format.md) |
-| ADR Minimalism | Separation of decisions from specifications | [SPEC-CF3-001-B](./specs/SPEC-CF3-001-B-Minimalism.md) |
-| Dependency Tracking | Relationship management between ADRs | [SPEC-CF3-001-C](./specs/SPEC-CF3-001-C-Dependencies.md) |
-| Master ADRs | Parent ADRs for complex initiatives | [SPEC-CF3-001-D](./specs/SPEC-CF3-001-D-Master-ADRs.md) |
-| Extended Definition of Done | ECADR + Dependencies + References | [SPEC-CF3-001-E](./specs/SPEC-CF3-001-E-Definition-of-Done.md) |
+| WH(Y) Statement Format | Structured 6-part decision statement | [SPEC-CF3-001-A](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-A-WHY-Format.md) |
+| ADR Minimalism | Separation of decisions from specifications | [SPEC-CF3-001-B](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-B-Minimalism.md) |
+| Dependency Tracking | Relationship management between ADRs | [SPEC-CF3-001-C](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-C-Dependencies.md) |
+| Master ADRs | Parent ADRs for complex initiatives | [SPEC-CF3-001-D](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-D-Master-ADRs.md) |
+| Extended Definition of Done | ECADR + Dependencies + References | [SPEC-CF3-001-E](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-E-Definition-of-Done.md) |
 
 ---
 
@@ -243,12 +243,12 @@ Continue with current format only; accept limitations as acceptable trade-offs.
 
 | Reference ID | Title | Type | Location |
 |--------------|-------|------|----------|
-| SPEC-CF3-001-A | WH(Y) Statement Format | Technical Specification | [specs/SPEC-CF3-001-A-WHY-Format.md](./specs/SPEC-CF3-001-A-WHY-Format.md) |
-| SPEC-CF3-001-B | ADR Minimalism and Separation | Technical Specification | [specs/SPEC-CF3-001-B-Minimalism.md](./specs/SPEC-CF3-001-B-Minimalism.md) |
-| SPEC-CF3-001-C | Dependencies and Relationships | Technical Specification | [specs/SPEC-CF3-001-C-Dependencies.md](./specs/SPEC-CF3-001-C-Dependencies.md) |
-| SPEC-CF3-001-D | Master ADRs | Technical Specification | [specs/SPEC-CF3-001-D-Master-ADRs.md](./specs/SPEC-CF3-001-D-Master-ADRs.md) |
-| SPEC-CF3-001-E | Extended Definition of Done | Technical Specification | [specs/SPEC-CF3-001-E-Definition-of-Done.md](./specs/SPEC-CF3-001-E-Definition-of-Done.md) |
-| SOURCE-001 | Recording Architecture Decisions (Expanded) | Supporting Artefact | [Recording_Architecture_Decisions_Expanded.md](./Recording_Architecture_Decisions_Expanded.md) |
+| SPEC-CF3-001-A | WH(Y) Statement Format | Technical Specification | [specs/SPEC-CF3-001-A-WHY-Format.md](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-A-WHY-Format.md) |
+| SPEC-CF3-001-B | ADR Minimalism and Separation | Technical Specification | [specs/SPEC-CF3-001-B-Minimalism.md](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-B-Minimalism.md) |
+| SPEC-CF3-001-C | Dependencies and Relationships | Technical Specification | [specs/SPEC-CF3-001-C-Dependencies.md](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-C-Dependencies.md) |
+| SPEC-CF3-001-D | Master ADRs | Technical Specification | [specs/SPEC-CF3-001-D-Master-ADRs.md](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-D-Master-ADRs.md) |
+| SPEC-CF3-001-E | Extended Definition of Done | Technical Specification | [specs/SPEC-CF3-001-E-Definition-of-Done.md](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-E-Definition-of-Done.md) |
+| SOURCE-001 | Recording Architecture Decisions (Expanded) | Supporting Artefact | [Recording_Architecture_Decisions_Expanded.md](https://github.com/cgbarlow/adr/blob/main/Recording_Architecture_Decisions_Expanded.md) |
 
 ---
 
@@ -256,7 +256,7 @@ Continue with current format only; accept limitations as acceptable trade-offs.
 
 This feature request is based on the recommendations contained in:
 
-**[Recording_Architecture_Decisions_Expanded.md](./Recording_Architecture_Decisions_Expanded.md)**
+**[Recording_Architecture_Decisions_Expanded.md](https://github.com/cgbarlow/adr/blob/main/Recording_Architecture_Decisions_Expanded.md)**
 
 This source document synthesizes best practices from:
 - Michael Nygard's original ADR concept (Cognitect, 2011)
@@ -382,4 +382,4 @@ jest.resetAllMocks →      vi.resetAllMocks
 
 ---
 
-*This ADR was created following the WH(Y) format as specified in [SPEC-CF3-001-A](./specs/SPEC-CF3-001-A-WHY-Format.md).*
+*This ADR was created following the WH(Y) format as specified in [SPEC-CF3-001-A](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-A-WHY-Format.md).*
