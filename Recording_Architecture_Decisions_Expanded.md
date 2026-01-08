@@ -107,6 +107,109 @@ Include a **References** section in your ADR that links to supporting specificat
 | SPEC-042-B | Authentication Flow Design | Design Document | `/docs/specs/SPEC-042-B.md` |
 | SPEC-042-C | Rate Limiting Policy | Policy Document | `/docs/policies/rate-limiting.md` |
 
+# Architecture Decision Record (ADR) format recommendations
+
+## WH(Y) statement
+
+[https://www.ozimmer.ch/practices/2020/04/27/ArchitectureDecisionMaking.html](https://www.ozimmer.ch/practices/2020/04/27/ArchitectureDecisionMaking.html)
+
+Extract:
+
+In the **context** of the Web shop service,  
+**facing** the need to keep user session data consistent and current across shop instances,  
+we **decided** for the Database Session State Pattern  
+and **neglected** Client Session State or Server Session State  
+to **achieve** cloud elasticity,  
+**accepting** that a session database needs to be designed, implemented, and replicated.
+
+Each template element appears on one line in the above example:
+
+1. ***context***: functional requirement (user story or use case) or an architecture component,
+
+2. ***facing***: non-functional requirement, for instance a desired quality,
+
+3. ***we decided for***: decision outcome, arguably the most important part,
+
+4. ***and neglected***: alternatives not chosen (not to be forgotten!),
+
+5. ***to achieve***: benefits, the full or partial satisfaction of the requirement,
+
+6. ***accepting that***: drawbacks, impact on other properties/context and effort/cost.
+
+Its six sections form one (rather long) sentence and can be visualized with the letter "Y", pronounced just like the word "why", which explains the name of the template:
+
+```mermaid
+flowchart TB
+    UC["🎯 In the context of<br/><use case uc and/or component co>"]
+    NFC["⚠️ ... facing<br/><non-functional concern c>"]
+    UC & NFC --> D((" "))
+    D --> Options
+    
+    subgraph Options[" "]
+        direction LR
+        O1["✅ we decided for <option o1>"]
+        O2["❌ and neglected <options o2 to on>"]
+    end
+    
+    Options --> Q["🏆 ... to achieve <quality q>"]
+    Q --> C["⚖️ ... accepting downside <consequence c>"]
+```
+ 
+
+## WHY(Y) statement - expanded
+
+Includes **Status**, **Governance**, **Dependencies**, and other supporting information.
+
+### Architecture Decision Record (ADR)
+
+| Decision | Initiative ID | Proposed by | Context (1) | Facing (2) | We decided for (3) | And neglected (4) | To achieve (5) | Accepting that (6) |
+| -------- | ------------- | ----------- | ----------- | ---------- | ------------------ | ----------------- | -------------- | ------------------ |
+| *unique identifier* | *project reference ID* | *who wrote this record* | *functional requirement (user story or use case) or an architecture component (product, solution, system)* | *non-functional requirement, for instance a desired quality* | *decision outcome, arguably the most important part* | *alternatives or options not chosen* | *benefits, the full or partial satisfaction of the requirement* | *drawbacks, impact on other properties/context and effort/cost* |
+| D123 | ITAMP456 | Joe Bloggs | `In the context of the Web shop service,` | `facing the need to keep user session data consistent and current across shop instances,` | `we decided for the Database Session State Pattern` | `and neglected Client Session State or Server Session State` | `to achieve cloud elasticity,` | `accepting that a session database needs to be designed, implemented, and replicated.` |
+
+\+ **supporting documentation or references**.
+
+#### ADR journal - Dependencies
+
+The **Dependencies** metadata captures relationships between this ADR and others. This enables impact analysis, navigation, and understanding of the broader decision context.
+
+| Relationship | Related ADR | Title | Notes |
+| ------------ | ----------- | ----- | ----- |
+| *Depends On / Supersedes / Relates To / Refines / Part Of (Master)* | *ADR identifier* | *Title of related ADR* | *Brief explanation of the relationship* |
+| Depends On | D098 | Cloud-First Strategy | Prerequisite strategic direction |
+| Relates To | D119 | Caching Strategy | Consider session caching implications |
+| Part Of | MD015 | E-Commerce Platform Modernisation | Parent initiative |
+
+#### ADR journal - References
+
+The **References** section links to detailed specifications and supporting documentation, keeping the ADR focused on the decision while providing paths to implementation detail.
+
+| Reference ID | Title | Type | Location | Version |
+| ------------ | ----- | ---- | -------- | ------- |
+| *Unique spec identifier* | *Document title* | *Specification / Design / Policy / Standard* | *Path or URL* | *Current version* |
+| SPEC-D123-A | Session State Database Schema | Technical Specification | `/docs/specs/session-db-schema.md` | 1.2 |
+| SPEC-D123-B | Session Replication Configuration | Configuration Standard | `/docs/standards/session-replication.md` | 1.0 |
+
+#### ADR journal - Governance
+
+The **Governance** metadata will change over time. Therefore these will be sub-records within a Decision record; we can expect a journal of multiple Governance records associated to a Decision record.
+
+| Architecture design / Review board presented to? | Presentation date | Outcome of presentation | Resulting Action / Comments | Review cadence | Next Review Date |
+| ------------------------------------------------ | ----------------- | ----------------------- | --------------------------- | -------------- | ---------------- |
+| *Name, eg;* AC, TDC, PGG | *When was this presented* |   |   | *Frequency of review* | *Calculated based on Presentation Date and Review Cadence* |
+| TDC | 01 Jun 2021 | Endorsed | Proceed to procurement stage | 12 months | 01 Jun 2022 |
+
+#### ADR journal - Status
+
+The **Status** metadata will change over time. Therefore these will be sub-records within a Decision record; we can expect a journal of multiple Status records associated to a Decision record.
+
+| Status | Approver | Date |
+| ------ | -------- | ---- |
+| *Approved / Under review / Expired (could be automated) / Retired / Rejected / Superseded* | *Usually the Product Owner* | *Date the status changed* |
+| Approved | Jane Doe | 01 Jun 2021 |
+
+---
+
 # ADR Dependencies and Relationships
 
 Architecture decisions rarely exist in isolation. Recognising and documenting the relationships between ADRs provides crucial context for understanding how decisions interact, enables impact analysis when changes are proposed, and supports navigation through complex decision landscapes.
@@ -227,109 +330,6 @@ The Master ADR's aggregate status can be derived from its children:
 
 ---
 
-# Architecture Decision Record (ADR) format recommendations
-
-## WH(Y) statement
-
-[https://www.ozimmer.ch/practices/2020/04/27/ArchitectureDecisionMaking.html](https://www.ozimmer.ch/practices/2020/04/27/ArchitectureDecisionMaking.html)
-
-Extract:
-
-In the **context** of the Web shop service,  
-**facing** the need to keep user session data consistent and current across shop instances,  
-we **decided** for the Database Session State Pattern  
-and **neglected** Client Session State or Server Session State  
-to **achieve** cloud elasticity,  
-**accepting** that a session database needs to be designed, implemented, and replicated.
-
-Each template element appears on one line in the above example:
-
-1. ***context***: functional requirement (user story or use case) or an architecture component,
-
-2. ***facing***: non-functional requirement, for instance a desired quality,
-
-3. ***we decided for***: decision outcome, arguably the most important part,
-
-4. ***and neglected***: alternatives not chosen (not to be forgotten!),
-
-5. ***to achieve***: benefits, the full or partial satisfaction of the requirement,
-
-6. ***accepting that***: drawbacks, impact on other properties/context and effort/cost.
-
-Its six sections form one (rather long) sentence and can be visualized with the letter "Y", pronounced just like the word "why", which explains the name of the template:
-
-```mermaid
-flowchart TB
-    UC["🎯 In the context of<br/><use case uc and/or component co>"]
-    NFC["⚠️ ... facing<br/><non-functional concern c>"]
-    UC & NFC --> D((" "))
-    D --> Options
-    
-    subgraph Options[" "]
-        direction LR
-        O1["✅ we decided for <option o1>"]
-        O2["❌ and neglected <options o2 to on>"]
-    end
-    
-    Options --> Q["🏆 ... to achieve <quality q>"]
-    Q --> C["⚖️ ... accepting downside <consequence c>"]
-```
- 
-
-## WHY(Y) statement - expanded
-
-Includes **Status**, **Governance**, **Dependencies**, and other supporting information.
-
-### Architecture Decision Record (ADR)
-
-| Decision | Initiative ID | Proposed by | Context (1) | Facing (2) | We decided for (3) | And neglected (4) | To achieve (5) | Accepting that (6) |
-| -------- | ------------- | ----------- | ----------- | ---------- | ------------------ | ----------------- | -------------- | ------------------ |
-| *unique identifier* | *project reference ID* | *who wrote this record* | *functional requirement (user story or use case) or an architecture component (product, solution, system)* | *non-functional requirement, for instance a desired quality* | *decision outcome, arguably the most important part* | *alternatives or options not chosen* | *benefits, the full or partial satisfaction of the requirement* | *drawbacks, impact on other properties/context and effort/cost* |
-| D123 | ITAMP456 | Joe Bloggs | `In the context of the Web shop service,` | `facing the need to keep user session data consistent and current across shop instances,` | `we decided for the Database Session State Pattern` | `and neglected Client Session State or Server Session State` | `to achieve cloud elasticity,` | `accepting that a session database needs to be designed, implemented, and replicated.` |
-
-\+ **supporting documentation or references**.
-
-#### ADR journal - Dependencies
-
-The **Dependencies** metadata captures relationships between this ADR and others. This enables impact analysis, navigation, and understanding of the broader decision context.
-
-| Relationship | Related ADR | Title | Notes |
-| ------------ | ----------- | ----- | ----- |
-| *Depends On / Supersedes / Relates To / Refines / Part Of (Master)* | *ADR identifier* | *Title of related ADR* | *Brief explanation of the relationship* |
-| Depends On | D098 | Cloud-First Strategy | Prerequisite strategic direction |
-| Relates To | D119 | Caching Strategy | Consider session caching implications |
-| Part Of | MD015 | E-Commerce Platform Modernisation | Parent initiative |
-
-#### ADR journal - References
-
-The **References** section links to detailed specifications and supporting documentation, keeping the ADR focused on the decision while providing paths to implementation detail.
-
-| Reference ID | Title | Type | Location | Version |
-| ------------ | ----- | ---- | -------- | ------- |
-| *Unique spec identifier* | *Document title* | *Specification / Design / Policy / Standard* | *Path or URL* | *Current version* |
-| SPEC-D123-A | Session State Database Schema | Technical Specification | `/docs/specs/session-db-schema.md` | 1.2 |
-| SPEC-D123-B | Session Replication Configuration | Configuration Standard | `/docs/standards/session-replication.md` | 1.0 |
-
-#### ADR journal - Governance
-
-The **Governance** metadata will change over time. Therefore these will be sub-records within a Decision record; we can expect a journal of multiple Governance records associated to a Decision record.
-
-| Architecture design / Review board presented to? | Presentation date | Outcome of presentation | Resulting Action / Comments | Review cadence | Next Review Date |
-| ------------------------------------------------ | ----------------- | ----------------------- | --------------------------- | -------------- | ---------------- |
-| *Name, eg;* AC, TDC, PGG | *When was this presented* |   |   | *Frequency of review* | *Calculated based on Presentation Date and Review Cadence* |
-| TDC | 01 Jun 2021 | Endorsed | Proceed to procurement stage | 12 months | 01 Jun 2022 |
-
-#### ADR journal - Status
-
-The **Status** metadata will change over time. Therefore these will be sub-records within a Decision record; we can expect a journal of multiple Status records associated to a Decision record.
-
-| Status | Approver | Date |
-| ------ | -------- | ---- |
-| *Approved / Under review / Expired (could be automated) / Retired / Rejected / Superseded* | *Usually the Product Owner* | *Date the status changed* |
-| Approved | Jane Doe | 01 Jun 2021 |
-
----
-
 # A Definition of Done for Architectural Decision Making
 
 [https://www.ozimmer.ch/practices/2020/05/22/ADDefinitionOfDone.html](https://www.ozimmer.ch/practices/2020/05/22/ADDefinitionOfDone.html)
@@ -345,6 +345,23 @@ The **Status** metadata will change over time. Therefore these will be sub-recor
 5. Do we know when to realize, review and possibly revise this decision (`R`)?
 
 If you can answer "yes" five times in this quick test, you are done with an AD. If any answer is missing, you might have to invest a bit more time — at least to justify why this criterion does not apply for this particular AD.
+
+```mermaid
+flowchart TB
+    Evidence((Evidence))
+    Criteria((Criteria))
+    Agreement((Agreement))
+    Documentation((Documentation))
+    RealizationAndReview((Realization & Review))
+
+    Evidence -->|"goHandInHand (Partnership)"| Criteria
+    Evidence -->|leadsTo| Agreement
+    Agreement -->|reviewedFor| Criteria
+    Agreement -->|capturedIn| Documentation
+    Criteria -->|referencedIn| Documentation
+    Criteria -->|evaluatedAndRevisitedDuring| RealizationAndReview
+    Documentation -->|referenceFor| RealizationAndReview
+```
 
 ## Extended Definition of Done (with Dependencies and References)
 
@@ -381,6 +398,7 @@ flowchart TB
 ```
 
 ---
+
 
 # Appendix
 
