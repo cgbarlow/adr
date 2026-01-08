@@ -28,6 +28,23 @@
 
 ---
 
+## When is an ADR Required?
+
+All **Architecturally Significant Decisions** must be captured as an ADR. A decision is architecturally significant when it meets any one of the following criteria (see [Architecturally_Significant_Decision_Criteria.md](https://github.com/cgbarlow/adr/blob/main/Architecturally_Significant_Decision_Criteria.md)):
+
+| Criterion | Description |
+|-----------|-------------|
+| **Hard-to-Change** | Difficult to undo or reverse, with high strategic impact |
+| **New** | Innovative or significantly different from established guardrails |
+| **Not Strategically Aligned** | Deviates from approved strategies (e.g., extending retiring assets, duplicating solutions) |
+| **Risk** | Involves significant technology-related risk |
+| **Budget/Delivery/Benefits** | Substantial financial, delivery, or benefit realisation implications |
+| **Requested** | Governance body requests a decision paper due to potential impacts |
+
+Decisions meeting these criteria must be presented to the authorised decision maker or decision body for approval.
+
+---
+
 ## Problem Statement
 
 The current Claude-Flow v3 ADRs (see [/v3/implementation/adrs/](https://github.com/ruvnet/claude-flow/tree/v3/v3/implementation/adrs)) exhibit two fundamental problems: **structural inconsistency** and **conflation of decisions with implementation**.
@@ -249,6 +266,7 @@ Continue with current format only; accept limitations as acceptable trade-offs.
 | SPEC-CF3-001-D | Master ADRs | Technical Specification | [specs/SPEC-CF3-001-D-Master-ADRs.md](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-D-Master-ADRs.md) |
 | SPEC-CF3-001-E | Extended Definition of Done | Technical Specification | [specs/SPEC-CF3-001-E-Definition-of-Done.md](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-E-Definition-of-Done.md) |
 | SOURCE-001 | Recording Architecture Decisions (Expanded) | Supporting Artefact | [Recording_Architecture_Decisions_Expanded.md](https://github.com/cgbarlow/adr/blob/main/Recording_Architecture_Decisions_Expanded.md) |
+| SOURCE-002 | Architecturally Significant Decision Criteria | Governance Criteria | [Architecturally_Significant_Decision_Criteria.md](https://github.com/cgbarlow/adr/blob/main/Architecturally_Significant_Decision_Criteria.md) |
 
 ---
 

@@ -2,6 +2,19 @@
 
 This repository contains a feature request and specifications for implementing an **enhanced ADR mode** in [Claude-Flow v3](https://github.com/ruvnet/claude-flow/tree/v3), using the WH(Y) format.
 
+## When is an ADR Required?
+
+All **Architecturally Significant Decisions** must be captured as an ADR. A decision is architecturally significant when it meets any of the criteria defined in [Architecturally_Significant_Decision_Criteria.md](https://github.com/cgbarlow/adr/blob/main/Architecturally_Significant_Decision_Criteria.md):
+
+| Criterion | Description |
+|-----------|-------------|
+| **Hard-to-Change** | Difficult to undo or reverse, with high strategic impact |
+| **New** | Innovative or significantly different from established guardrails |
+| **Not Strategically Aligned** | Deviates from approved strategies |
+| **Risk** | Involves significant technology-related risk |
+| **Budget/Delivery/Benefits** | Substantial financial, delivery, or benefit implications |
+| **Requested** | Governance body requests a decision paper |
+
 ## The Problem
 
 The current [Claude-Flow v3 ADRs](https://github.com/ruvnet/claude-flow/tree/v3/v3/implementation/adrs) exhibit two fundamental issues:
@@ -38,21 +51,24 @@ A **toggle-able enhanced ADR mode** that:
 
 ### Feature Request
 
-- **[ADR-CF3-001-Enhanced-ADR-Format.md](./ADR-CF3-001-Enhanced-ADR-Format.md)** - Full feature request in WH(Y) format proposing the toggle-able enhanced ADR mode for Claude-Flow v3.
+- [ADR-CF3-001-Enhanced-ADR-Format.md](https://github.com/cgbarlow/adr/blob/main/ADR-CF3-001-Enhanced-ADR-Format.md) - Full feature request in WH(Y) format proposing the toggle-able enhanced ADR mode for Claude-Flow v3.
 
 ### Specifications
 
 | Specification | Description |
 |---------------|-------------|
-| [SPEC-CF3-001-A-WHY-Format.md](./specs/SPEC-CF3-001-A-WHY-Format.md) | WH(Y) statement format with 6-part structured decision template |
-| [SPEC-CF3-001-B-Minimalism.md](./specs/SPEC-CF3-001-B-Minimalism.md) | ADR minimalism and separation of decisions from specifications |
-| [SPEC-CF3-001-C-Dependencies.md](./specs/SPEC-CF3-001-C-Dependencies.md) | Dependency tracking between ADRs |
-| [SPEC-CF3-001-D-Master-ADRs.md](./specs/SPEC-CF3-001-D-Master-ADRs.md) | Master ADRs for complex initiatives |
-| [SPEC-CF3-001-E-Definition-of-Done.md](./specs/SPEC-CF3-001-E-Definition-of-Done.md) | Extended Definition of Done (ECADR) |
+| [SPEC-CF3-001-A-WHY-Format.md](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-A-WHY-Format.md) | WH(Y) statement format with 6-part structured decision template |
+| [SPEC-CF3-001-B-Minimalism.md](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-B-Minimalism.md) | ADR minimalism and separation of decisions from specifications |
+| [SPEC-CF3-001-C-Dependencies.md](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-C-Dependencies.md) | Dependency tracking between ADRs |
+| [SPEC-CF3-001-D-Master-ADRs.md](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-D-Master-ADRs.md) | Master ADRs for complex initiatives |
+| [SPEC-CF3-001-E-Definition-of-Done.md](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-E-Definition-of-Done.md) | Extended Definition of Done (ECADR) |
 
-### Source Document
+### Source Documents
 
-- **[Recording_Architecture_Decisions_Expanded.md](./Recording_Architecture_Decisions_Expanded.md)** - Comprehensive guide synthesizing ADR best practices from Nygard, Henderson, GitHub, and Zimmermann.
+| Document | Description |
+|----------|-------------|
+| [Recording_Architecture_Decisions_Expanded.md](https://github.com/cgbarlow/adr/blob/main/Recording_Architecture_Decisions_Expanded.md) | Comprehensive guide synthesizing ADR best practices from Nygard, Henderson, GitHub, and Zimmermann |
+| [Architecturally_Significant_Decision_Criteria.md](https://github.com/cgbarlow/adr/blob/main/Architecturally_Significant_Decision_Criteria.md) | Criteria for determining when an ADR is required |
 
 ## WH(Y) Format
 

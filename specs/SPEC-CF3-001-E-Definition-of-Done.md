@@ -3,7 +3,7 @@
 | Field | Value |
 |-------|-------|
 | **Specification ID** | SPEC-CF3-001-E |
-| **Parent ADR** | [ADR-CF3-001](../ADR-CF3-001-Enhanced-ADR-Format.md) |
+| **Parent ADR** | [ADR-CF3-001](https://github.com/cgbarlow/adr/blob/main/ADR-CF3-001-Enhanced-ADR-Format.md) |
 | **Version** | 1.0 |
 | **Status** | Draft |
 | **Last Updated** | 2026-01-08 |
@@ -13,6 +13,19 @@
 ## Overview
 
 This specification defines an extended "Definition of Done" checklist for architecture decisions. Based on Olaf Zimmermann's ECADR criteria, it adds checks for dependencies, references, and master ADR linkage.
+
+### Pre-requisite: Is this an Architecturally Significant Decision?
+
+Before applying the Definition of Done, first confirm the decision meets the criteria for an ADR as defined in [Architecturally_Significant_Decision_Criteria.md](https://github.com/cgbarlow/adr/blob/main/Architecturally_Significant_Decision_Criteria.md):
+
+- **Hard-to-Change**: Difficult to undo or reverse
+- **New**: Innovative or different from established guardrails
+- **Not Strategically Aligned**: Deviates from approved strategies
+- **Risk**: Involves significant technology-related risk
+- **Budget/Delivery/Benefits**: Substantial implications
+- **Requested**: Governance body requests a decision paper
+
+If the decision meets any of these criteria, proceed with the Definition of Done checklist below.
 
 ---
 
@@ -350,4 +363,5 @@ Based on the Definition of Done for Architecture Decisions by Olaf Zimmermann:
 
 Extended with additional criteria from:
 
-- [Recording_Architecture_Decisions_Expanded.md](../Recording_Architecture_Decisions_Expanded.md)
+- [Recording_Architecture_Decisions_Expanded.md](https://github.com/cgbarlow/adr/blob/main/Recording_Architecture_Decisions_Expanded.md)
+- [Architecturally_Significant_Decision_Criteria.md](https://github.com/cgbarlow/adr/blob/main/Architecturally_Significant_Decision_Criteria.md)
