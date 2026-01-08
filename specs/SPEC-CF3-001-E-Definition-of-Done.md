@@ -3,7 +3,7 @@
 | Field | Value |
 |-------|-------|
 | **Specification ID** | SPEC-CF3-001-E |
-| **Parent ADR** | [ADR-CF3-001](https://github.com/cgbarlow/adr/blob/main/ADR-CF3-001-Enhanced-ADR-Format.md) |
+| **Parent ADR** | [ADR-CF3-001](https://github.com/cgbarlow/adr/blob/architecturally_significant_decisions/ADR-CF3-001-Enhanced-ADR-Format.md) |
 | **Version** | 1.0 |
 | **Status** | Draft |
 | **Last Updated** | 2026-01-08 |
@@ -16,7 +16,7 @@ This specification defines an extended "Definition of Done" checklist for archit
 
 ### Pre-requisite: Is this an Architecturally Significant Decision?
 
-Before applying the Definition of Done, first confirm the decision meets the criteria for an ADR as defined in [Architecturally_Significant_Decision_Criteria.md](https://github.com/cgbarlow/adr/blob/main/Architecturally_Significant_Decision_Criteria.md):
+Before applying the Definition of Done, first confirm the decision meets the criteria for an ADR as defined in [Architecturally_Significant_Decision_Criteria.md](https://github.com/cgbarlow/adr/blob/architecturally_significant_decisions/Architecturally_Significant_Decision_Criteria.md):
 
 - **Hard-to-Change**: Difficult to undo or reverse
 - **New**: Innovative or different from established guardrails

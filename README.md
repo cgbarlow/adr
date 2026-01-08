@@ -4,7 +4,7 @@ This repository contains a feature request and specifications for implementing a
 
 ## When is an ADR Required?
 
-All **Architecturally Significant Decisions** must be captured as an ADR. A decision is architecturally significant when it meets any of the criteria defined in [Architecturally_Significant_Decision_Criteria.md](https://github.com/cgbarlow/adr/blob/main/Architecturally_Significant_Decision_Criteria.md):
+All **Architecturally Significant Decisions** must be captured as an ADR. A decision is architecturally significant when it meets any of the criteria defined in [Architecturally_Significant_Decision_Criteria.md](https://github.com/cgbarlow/adr/blob/architecturally_significant_decisions/Architecturally_Significant_Decision_Criteria.md):
 
 | Criterion | Description |
 |-----------|-------------|
