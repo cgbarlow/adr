@@ -1,9 +1,9 @@
-# SPEC-CF3-001-B: ADR Minimalism and Separation
+# SPEC-001-B: ADR Minimalism and Separation
 
 | Field | Value |
 |-------|-------|
-| **Specification ID** | SPEC-CF3-001-B |
-| **Parent ADR** | [ADR-CF3-001](../ADR-CF3-001-Enhanced-ADR-Format.md) |
+| **Specification ID** | SPEC-001-B |
+| **Parent ADR** | [ADR-001](../ADR-001-Enhanced-ADR-Format.md) |
 | **Version** | 1.0 |
 | **Status** | Draft |
 | **Last Updated** | 2026-01-08 |
@@ -124,7 +124,7 @@ Include a References section in every ADR linking to supporting specifications:
 
 ---
 
-## Implementation in Claude-Flow v3
+## Implementation Guidance
 
 ### Directory Structure
 
@@ -144,14 +144,14 @@ project/
 
 ### Automatic Spec Stub Generation
 
-When creating an ADR with `--separate-specs` enabled, Claude-Flow v3 should:
+When creating an ADR with `--separate-specs` enabled, tooling should:
 
 1. Create the ADR file with References section
 2. Create stub specification files for each referenced spec
 3. Link the files bidirectionally
 
 ```bash
-claude-flow adr new "Database Selection" --specs="schema,pooling,migration"
+adr new "Database Selection" --specs="schema,pooling,migration"
 ```
 
 Generates:

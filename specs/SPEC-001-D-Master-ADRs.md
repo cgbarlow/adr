@@ -1,9 +1,9 @@
-# SPEC-CF3-001-D: Master ADRs
+# SPEC-001-D: Master ADRs
 
 | Field | Value |
 |-------|-------|
-| **Specification ID** | SPEC-CF3-001-D |
-| **Parent ADR** | [ADR-CF3-001](../ADR-CF3-001-Enhanced-ADR-Format.md) |
+| **Specification ID** | SPEC-001-D |
+| **Parent ADR** | [ADR-001](../ADR-001-Enhanced-ADR-Format.md) |
 | **Version** | 1.0 |
 | **Status** | Draft |
 | **Last Updated** | 2026-01-08 |
@@ -251,38 +251,38 @@ def calculate_aggregate_status(child_adrs):
 
 ---
 
-## Implementation in Claude-Flow v3
+## Implementation Guidance
 
 ### Creating a Master ADR
 
 ```bash
 # Create new Master ADR
-claude-flow adr new "Cloud Migration Strategy" --master
+adr new "Cloud Migration Strategy" --master
 
 # Create child ADR linked to master
-claude-flow adr new "Cloud Provider Selection" --part-of=MADR-001 --phase=1
+adr new "Cloud Provider Selection" --part-of=MADR-001 --phase=1
 
 # Convert existing ADR to Master ADR
-claude-flow adr promote ADR-050 --to-master
+adr promote ADR-050 --to-master
 ```
 
 ### Viewing Master ADR Status
 
 ```bash
 # View aggregate status
-claude-flow adr status MADR-001
+adr status MADR-001
 
 # View with child details
-claude-flow adr status MADR-001 --children
+adr status MADR-001 --children
 
 # View sequencing
-claude-flow adr sequence MADR-001
+adr sequence MADR-001
 ```
 
 ### Aggregate Status Dashboard
 
 ```bash
-claude-flow adr dashboard MADR-001
+adr dashboard MADR-001
 ```
 
 Output:

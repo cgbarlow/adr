@@ -1,11 +1,11 @@
-# ADR-CF3-001: Enhanced ADR Format for Claude-Flow v3
+# ADR-001: Enhanced ADR Format
 
-## Feature Request: Toggle-able WH(Y) Architecture Decision Record (ADR) Mode
+## Proposal: Toggle-able WH(Y) Architecture Decision Record (ADR) Mode
 
 | Field | Value |
 |-------|-------|
-| **Decision ID** | ADR-CF3-001 |
-| **Initiative** | Claude-Flow v3 ADR Enhancement |
+| **Decision ID** | ADR-001 |
+| **Initiative** | Enhanced ADR Format |
 | **Proposed By** | Architecture Team |
 | **Date** | 2026-01-08 |
 | **Status** | Proposed |
@@ -14,7 +14,7 @@
 
 ## ADR (WH(Y) Statement format)
 
-**In the context of** Claude-Flow v3's ADR generation capabilities, where current ADRs serve as implementation records combining architectural decisions with code examples, file listings, and technical specifications in a single document,
+**In the context of** ADR generation capabilities, where current ADRs serve as implementation records combining architectural decisions with code examples, file listings, and technical specifications in a single document,
 
 **facing** the challenge that implementation-centric ADRs obscure decision rationale over time, lack relationship tracking between decisions, provide no governance workflow support, and become difficult to maintain as implementation details evolve independently of the original decision,
 
@@ -30,7 +30,7 @@
 
 ## Problem Statement
 
-The current Claude-Flow v3 ADRs (see [/v3/implementation/adrs/](https://github.com/ruvnet/claude-flow/tree/v3/v3/implementation/adrs)) exhibit two fundamental problems: **structural inconsistency** and **conflation of decisions with implementation**.
+Many ADR implementations exhibit two fundamental problems: **structural inconsistency** and **conflation of decisions with implementation**.
 
 ### Problem 1: No Standard Structure
 
@@ -38,9 +38,9 @@ Each ADR follows a different format:
 
 | ADR | Structure | Sections |
 |-----|-----------|----------|
-| [ADR-008 (Vitest)](https://github.com/ruvnet/claude-flow/blob/v3/v3/implementation/adrs/ADR-008-VITEST.md) | Compact | Context → Decision → Rationale → Implementation → Performance |
-| [ADR-006 (Memory)](https://github.com/ruvnet/claude-flow/blob/v3/v3/implementation/adrs/ADR-006-UNIFIED-MEMORY.md) | Evolving | Context → Decision → Backends → Implementation → Updates (dated) |
-| [ADR-016 (Claims)](https://github.com/ruvnet/claude-flow/blob/v3/v3/implementation/adrs/ADR-016-collaborative-issue-claims.md) | Elaborate | Context → Decision → Types → Patterns → API → Integration |
+| ADR-008 (Vitest) | Compact | Context → Decision → Rationale → Implementation → Performance |
+| ADR-006 (Memory) | Evolving | Context → Decision → Backends → Implementation → Updates (dated) |
+| ADR-016 (Claims) | Elaborate | Context → Decision → Types → Patterns → API → Integration |
 
 This inconsistency makes ADRs difficult to navigate, compare, and review systematically.
 
@@ -54,7 +54,7 @@ This inconsistency makes ADRs difficult to navigate, compare, and review systema
 
 ### Problem 3: Living Documents with Appended Updates
 
-ADR-006 contains dated update sections (2026-01-07, 2026-01-08) appended to the document, turning the ADR into a changelog rather than a stable decision record.
+ADR-006 contains dated update sections appended to the document, turning the ADR into a changelog rather than a stable decision record.
 
 ### Problem 4: Missing Decision Infrastructure
 
@@ -80,7 +80,7 @@ When these are combined, neither is served well: decisions become unmaintainable
 
 ## Opportunity
 
-By introducing an **enhanced WH(Y) mode** as a toggle-able option, Claude-Flow v3 can address the structural inconsistency and separation of concerns problems while preserving backward compatibility.
+By introducing an **enhanced WH(Y) mode** as a toggle-able option, ADR tooling can address the structural inconsistency and separation of concerns problems while preserving backward compatibility.
 
 ### Two Modes, Two Purposes
 
@@ -103,7 +103,7 @@ By introducing an **enhanced WH(Y) mode** as a toggle-able option, Claude-Flow v
 
 ### Value Proposition
 
-This positions Claude-Flow v3 as a comprehensive architecture documentation tool suitable for:
+This positions the enhanced ADR format as a comprehensive architecture documentation approach suitable for:
 
 - **Agile teams** using standard mode for rapid implementation docs
 - **Enterprise governance** using enhanced mode for auditable decision records
@@ -114,26 +114,25 @@ This positions Claude-Flow v3 as a comprehensive architecture documentation tool
 
 ## Summary
 
-This feature request proposes adding an **enhanced WH(Y) ADR mode** to Claude-Flow v3 that complements the existing implementation-focused format. When enabled, this mode generates ADRs optimized for decision capture, dependency tracking, and governance workflows—while delegating implementation details to separate specification files.
+This proposal defines an **enhanced WH(Y) ADR mode** that complements the existing implementation-focused format. When enabled, this mode produces ADRs optimized for decision capture, dependency tracking, and governance workflows—while delegating implementation details to separate specification files.
 
 ### Key Capabilities
 
 | Capability | Description | Specification |
 |------------|-------------|---------------|
-| WH(Y) Statement Format | Structured 6-part decision statement | [SPEC-CF3-001-A](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-A-WHY-Format.md) |
-| ADR Minimalism | Separation of decisions from specifications | [SPEC-CF3-001-B](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-B-Minimalism.md) |
-| Dependency Tracking | Relationship management between ADRs | [SPEC-CF3-001-C](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-C-Dependencies.md) |
-| Master ADRs | Parent ADRs for complex initiatives | [SPEC-CF3-001-D](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-D-Master-ADRs.md) |
-| Extended Definition of Done | ECADR + Dependencies + References | [SPEC-CF3-001-E](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-E-Definition-of-Done.md) |
+| WH(Y) Statement Format | Structured 6-part decision statement | [SPEC-001-A](./specs/SPEC-001-A-WHY-Format.md) |
+| ADR Minimalism | Separation of decisions from specifications | [SPEC-001-B](./specs/SPEC-001-B-Minimalism.md) |
+| Dependency Tracking | Relationship management between ADRs | [SPEC-001-C](./specs/SPEC-001-C-Dependencies.md) |
+| Master ADRs | Parent ADRs for complex initiatives | [SPEC-001-D](./specs/SPEC-001-D-Master-ADRs.md) |
+| Extended Definition of Done | ECADR + Dependencies + References | [SPEC-001-E](./specs/SPEC-001-E-Definition-of-Done.md) |
 
 ---
 
-## Toggle Configuration
+## Configuration
 
-The enhanced ADR mode should be configurable at the project level:
+The enhanced ADR mode can be configured at the project level:
 
 ```yaml
-# claude-flow.config.yaml
 adr:
   mode: "enhanced"  # Options: "standard" | "enhanced"
   enhanced_options:
@@ -144,10 +143,10 @@ adr:
     governance_metadata: true
 ```
 
-Or via CLI flag:
+Or via CLI flag when using ADR tooling:
 
 ```bash
-claude-flow adr new --mode=enhanced "API Gateway Selection"
+adr new --mode=enhanced "API Gateway Selection"
 ```
 
 ---
@@ -196,7 +195,7 @@ Adopt a heavyweight enterprise decision framework with formal decision registers
 **Cons:**
 - **Adoption friction**: Excessive ceremony discourages regular use
 - **Overkill**: Most decisions don't require formal stakeholder matrices
-- **Poor fit**: Claude-Flow serves developers and architects, not governance committees
+- **Poor fit**: Most teams need pragmatic tools, not governance committees
 - **Slow iteration**: Heavy process conflicts with agile decision-making
 
 ### Option 4: Status Quo (Rejected)
@@ -218,7 +217,7 @@ Continue with current format only; accept limitations as acceptable trade-offs.
 
 | Review Board | Date | Outcome | Action | Review Cadence | Next Review |
 |--------------|------|---------|--------|----------------|-------------|
-| Claude-Flow Architecture | TBD | Pending | Feature specification review | 6 months | TBD |
+| TBD | TBD | Pending | Specification review | 6 months | TBD |
 
 ---
 
@@ -234,7 +233,6 @@ Continue with current format only; accept limitations as acceptable trade-offs.
 
 | Relationship | ADR ID | Title | Notes |
 |--------------|--------|-------|-------|
-| Part Of | CF3-ROADMAP | Claude-Flow v3 Roadmap | Parent initiative |
 | Enables | TBD | Future ADR tooling integrations | Graph visualization, impact analysis |
 
 ---
@@ -243,20 +241,20 @@ Continue with current format only; accept limitations as acceptable trade-offs.
 
 | Reference ID | Title | Type | Location |
 |--------------|-------|------|----------|
-| SPEC-CF3-001-A | WH(Y) Statement Format | Technical Specification | [specs/SPEC-CF3-001-A-WHY-Format.md](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-A-WHY-Format.md) |
-| SPEC-CF3-001-B | ADR Minimalism and Separation | Technical Specification | [specs/SPEC-CF3-001-B-Minimalism.md](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-B-Minimalism.md) |
-| SPEC-CF3-001-C | Dependencies and Relationships | Technical Specification | [specs/SPEC-CF3-001-C-Dependencies.md](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-C-Dependencies.md) |
-| SPEC-CF3-001-D | Master ADRs | Technical Specification | [specs/SPEC-CF3-001-D-Master-ADRs.md](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-D-Master-ADRs.md) |
-| SPEC-CF3-001-E | Extended Definition of Done | Technical Specification | [specs/SPEC-CF3-001-E-Definition-of-Done.md](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-E-Definition-of-Done.md) |
-| SOURCE-001 | Recording Architecture Decisions (Expanded) | Supporting Artefact | [Recording_Architecture_Decisions_Expanded.md](https://github.com/cgbarlow/adr/blob/main/Recording_Architecture_Decisions_Expanded.md) |
+| SPEC-001-A | WH(Y) Statement Format | Technical Specification | [specs/SPEC-001-A-WHY-Format.md](./specs/SPEC-001-A-WHY-Format.md) |
+| SPEC-001-B | ADR Minimalism and Separation | Technical Specification | [specs/SPEC-001-B-Minimalism.md](./specs/SPEC-001-B-Minimalism.md) |
+| SPEC-001-C | Dependencies and Relationships | Technical Specification | [specs/SPEC-001-C-Dependencies.md](./specs/SPEC-001-C-Dependencies.md) |
+| SPEC-001-D | Master ADRs | Technical Specification | [specs/SPEC-001-D-Master-ADRs.md](./specs/SPEC-001-D-Master-ADRs.md) |
+| SPEC-001-E | Extended Definition of Done | Technical Specification | [specs/SPEC-001-E-Definition-of-Done.md](./specs/SPEC-001-E-Definition-of-Done.md) |
+| SOURCE-001 | Recording Architecture Decisions (Expanded) | Supporting Artefact | [Recording_Architecture_Decisions_Expanded.md](./Recording_Architecture_Decisions_Expanded.md) |
 
 ---
 
 ## Supporting Artefact
 
-This feature request is based on the recommendations contained in:
+This proposal is based on the recommendations contained in:
 
-**[Recording_Architecture_Decisions_Expanded.md](https://github.com/cgbarlow/adr/blob/main/Recording_Architecture_Decisions_Expanded.md)**
+**[Recording_Architecture_Decisions_Expanded.md](./Recording_Architecture_Decisions_Expanded.md)**
 
 This source document synthesizes best practices from:
 - Michael Nygard's original ADR concept (Cognitect, 2011)
@@ -270,7 +268,7 @@ This source document synthesizes best practices from:
 
 ### Mode Comparison
 
-When generating ADRs, Claude-Flow v3 would behave differently based on mode:
+When generating ADRs, tooling would behave differently based on mode:
 
 | Aspect | Standard Mode (Current) | Enhanced Mode (Proposed) |
 |--------|------------------------|-------------------------|
@@ -282,7 +280,7 @@ When generating ADRs, Claude-Flow v3 would behave differently based on mode:
 
 ### Enhanced Mode Behaviour
 
-When the enhanced ADR mode is enabled, Claude-Flow v3 should:
+When the enhanced ADR mode is enabled, tooling should:
 
 1. **Generate ADRs** using the WH(Y) statement template with structured decision capture
 2. **Prompt for dependencies** when creating new ADRs (Depends On, Relates To, Supersedes, Refines, Part Of)
@@ -294,7 +292,7 @@ When the enhanced ADR mode is enabled, Claude-Flow v3 should:
 
 ### Migration Path
 
-For existing Claude-Flow v3 users with implementation-focused ADRs:
+For existing users with implementation-focused ADRs:
 
 1. **No forced migration**: Standard mode remains default
 2. **Gradual adoption**: New decisions can use enhanced mode while legacy ADRs remain unchanged
@@ -305,9 +303,9 @@ For existing Claude-Flow v3 users with implementation-focused ADRs:
 
 ## Comparison Example
 
-Using ADR-008 (Vitest) as a real example:
+Using a testing framework decision as a real example:
 
-### Current Format (from Claude-Flow v3)
+### Typical Format
 ```markdown
 # ADR-008: Vitest Over Jest
 
@@ -353,8 +351,8 @@ jest.resetAllMocks →      vi.resetAllMocks
 # ADR-008: Testing Framework Selection
 
 ## WH(Y) Decision Statement
-**In the context of** Claude-Flow v3's testing infrastructure,
-**facing** slow test execution (~30s), poor ESM support, and migration friction from v2's Jest setup,
+**In the context of** the project's testing infrastructure,
+**facing** slow test execution (~30s), poor ESM support, and migration friction from the previous Jest setup,
 **we decided for** Vitest as the testing framework,
 **and neglected** Jest (slow, ESM issues), Mocha (no built-in mocking), and Node test runner (immature ecosystem),
 **to achieve** 10x faster test execution, native ESM support, and Jest-compatible API for easier migration,
@@ -382,4 +380,4 @@ jest.resetAllMocks →      vi.resetAllMocks
 
 ---
 
-*This ADR was created following the WH(Y) format as specified in [SPEC-CF3-001-A](https://github.com/cgbarlow/adr/blob/main/specs/SPEC-CF3-001-A-WHY-Format.md).*
+*This ADR was created following the WH(Y) format as specified in [SPEC-001-A](./specs/SPEC-001-A-WHY-Format.md).*

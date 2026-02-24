@@ -1,10 +1,10 @@
 # ADR - Architecture Decision Records
 
-This repository contains a feature request and specifications for implementing an **enhanced ADR mode** in [Claude-Flow v3](https://github.com/ruvnet/claude-flow/tree/v3), using the WH(Y) format.
+This repository contains a proposal and specifications for an **enhanced ADR format** using the WH(Y) method.
 
 ## The Problem
 
-The current [Claude-Flow v3 ADRs](https://github.com/ruvnet/claude-flow/tree/v3/v3/implementation/adrs) exhibit two fundamental issues:
+Many ADR implementations exhibit two fundamental issues:
 
 ### 1. Structural Inconsistency
 Each ADR follows a different format:
@@ -28,7 +28,7 @@ The current format conflates two distinct concerns:
 
 ## The Solution
 
-A **toggle-able enhanced ADR mode** that:
+An **enhanced ADR mode** that:
 - Enforces a **standardized WH(Y) template** for all decisions
 - **Separates** decision rationale from implementation specifications
 - Adds **dependency tracking** between ADRs
@@ -36,19 +36,19 @@ A **toggle-able enhanced ADR mode** that:
 
 ## Contents
 
-### Feature Request
+### Proposal
 
-- **[ADR-CF3-001-Enhanced-ADR-Format.md](./ADR-CF3-001-Enhanced-ADR-Format.md)** - Full feature request in WH(Y) format proposing the toggle-able enhanced ADR mode for Claude-Flow v3.
+- **[ADR-001-Enhanced-ADR-Format.md](./ADR-001-Enhanced-ADR-Format.md)** - Full proposal in WH(Y) format for the enhanced ADR mode.
 
 ### Specifications
 
 | Specification | Description |
 |---------------|-------------|
-| [SPEC-CF3-001-A-WHY-Format.md](./specs/SPEC-CF3-001-A-WHY-Format.md) | WH(Y) statement format with 6-part structured decision template |
-| [SPEC-CF3-001-B-Minimalism.md](./specs/SPEC-CF3-001-B-Minimalism.md) | ADR minimalism and separation of decisions from specifications |
-| [SPEC-CF3-001-C-Dependencies.md](./specs/SPEC-CF3-001-C-Dependencies.md) | Dependency tracking between ADRs |
-| [SPEC-CF3-001-D-Master-ADRs.md](./specs/SPEC-CF3-001-D-Master-ADRs.md) | Master ADRs for complex initiatives |
-| [SPEC-CF3-001-E-Definition-of-Done.md](./specs/SPEC-CF3-001-E-Definition-of-Done.md) | Extended Definition of Done (ECADR) |
+| [SPEC-001-A-WHY-Format.md](./specs/SPEC-001-A-WHY-Format.md) | WH(Y) statement format with 6-part structured decision template |
+| [SPEC-001-B-Minimalism.md](./specs/SPEC-001-B-Minimalism.md) | ADR minimalism and separation of decisions from specifications |
+| [SPEC-001-C-Dependencies.md](./specs/SPEC-001-C-Dependencies.md) | Dependency tracking between ADRs |
+| [SPEC-001-D-Master-ADRs.md](./specs/SPEC-001-D-Master-ADRs.md) | Master ADRs for complex initiatives |
+| [SPEC-001-E-Definition-of-Done.md](./specs/SPEC-001-E-Definition-of-Done.md) | Extended Definition of Done (ECADR) |
 
 ### Source Document
 
@@ -69,7 +69,7 @@ accepting that <trade-offs>.
 
 ### Example: Before and After
 
-**Current format (ADR-008):**
+**Typical format:**
 ```markdown
 ## Decision
 Migrate to Vitest for v3.
@@ -82,7 +82,7 @@ export default defineConfig({...});
 **Enhanced format:**
 ```markdown
 ## WH(Y) Decision Statement
-In the context of Claude-Flow v3's testing infrastructure,
+In the context of the project's testing infrastructure,
 facing slow test execution (~30s) and poor ESM support,
 we decided for Vitest as the testing framework,
 and neglected Jest, Mocha, and Node test runner,
@@ -104,17 +104,18 @@ accepting that teams need minor syntax adjustments (jest.fn → vi.fn).
 | **Master ADRs** | Parent ADRs for complex multi-decision initiatives |
 | **Definition of Done** | 8 criteria: Evidence, Criteria, Agreement, Documentation, Review, Dependencies, References, Master |
 
-## Toggle Configuration
+## Configuration
+
+The enhanced ADR mode can be configured at the project level:
 
 ```yaml
-# claude-flow.config.yaml
 adr:
   mode: "enhanced"  # Options: "standard" | "enhanced"
 ```
 
-Or via CLI:
+Or via CLI when using ADR tooling:
 ```bash
-claude-flow adr new --mode=enhanced "API Gateway Selection"
+adr new --mode=enhanced "API Gateway Selection"
 ```
 
 ## References
@@ -124,3 +125,7 @@ claude-flow adr new --mode=enhanced "API Gateway Selection"
 - [Why Write ADRs](https://github.blog/2020-08-13-why-write-adrs/) - GitHub Blog
 - [Sustainable Architectural Design Decisions](https://www.ozimmer.ch/practices/2020/04/27/ArchitectureDecisionMaking.html) - Olaf Zimmermann
 - [Definition of Done for ADRs](https://www.ozimmer.ch/practices/2020/05/22/ADDefinitionOfDone.html) - Olaf Zimmermann
+
+## License
+
+This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](./LICENSE).

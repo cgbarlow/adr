@@ -1,9 +1,9 @@
-# SPEC-CF3-001-E: Extended Definition of Done
+# SPEC-001-E: Extended Definition of Done
 
 | Field | Value |
 |-------|-------|
-| **Specification ID** | SPEC-CF3-001-E |
-| **Parent ADR** | [ADR-CF3-001](../ADR-CF3-001-Enhanced-ADR-Format.md) |
+| **Specification ID** | SPEC-001-E |
+| **Parent ADR** | [ADR-001](../ADR-001-Enhanced-ADR-Format.md) |
 | **Version** | 1.0 |
 | **Status** | Draft |
 | **Last Updated** | 2026-01-08 |
@@ -214,19 +214,19 @@ flowchart TB
 
 ---
 
-## Implementation in Claude-Flow v3
+## Implementation Guidance
 
 ### Validation Command
 
 ```bash
 # Validate ADR against Definition of Done
-claude-flow adr validate ADR-045
+adr validate ADR-045
 
 # Validate with verbose output
-claude-flow adr validate ADR-045 --verbose
+adr validate ADR-045 --verbose
 
 # Validate all ADRs
-claude-flow adr validate --all
+adr validate --all
 ```
 
 ### Example Validation Output
@@ -273,10 +273,10 @@ Warnings:
 
 ## Pre-Approval Gate
 
-Before an ADR can transition to "Approved" status, Claude-Flow v3 should run the Definition of Done checklist:
+Before an ADR can transition to "Approved" status, tooling should run the Definition of Done checklist:
 
 ```bash
-claude-flow adr approve ADR-045
+adr approve ADR-045
 ```
 
 Output if checks fail:
@@ -287,7 +287,7 @@ Missing criteria:
   - A - Agreement: No governance review documented
   - Dp - Dependencies: Dependencies section empty
 
-Run 'claude-flow adr validate ADR-045 --verbose' for details
+Run 'adr validate ADR-045 --verbose' for details
 ```
 
 ---

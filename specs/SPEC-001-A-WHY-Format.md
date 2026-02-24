@@ -1,9 +1,9 @@
-# SPEC-CF3-001-A: WH(Y) Statement Format
+# SPEC-001-A: WH(Y) Statement Format
 
 | Field | Value |
 |-------|-------|
-| **Specification ID** | SPEC-CF3-001-A |
-| **Parent ADR** | [ADR-CF3-001](../ADR-CF3-001-Enhanced-ADR-Format.md) |
+| **Specification ID** | SPEC-001-A |
+| **Parent ADR** | [ADR-001](../ADR-001-Enhanced-ADR-Format.md) |
 | **Version** | 1.0 |
 | **Status** | Draft |
 | **Last Updated** | 2026-01-08 |
@@ -12,7 +12,7 @@
 
 ## Overview
 
-This specification defines the WH(Y) statement format for architecture decision records in Claude-Flow v3's enhanced ADR mode. The format provides a structured, single-sentence decision statement that captures context, rationale, and trade-offs.
+This specification defines the WH(Y) statement format for architecture decision records in the enhanced ADR mode. The format provides a structured, single-sentence decision statement that captures context, rationale, and trade-offs.
 
 ---
 
@@ -232,7 +232,7 @@ why_format:
 
 ## Validation Rules
 
-Claude-Flow v3 should validate WH(Y) statements against these rules:
+ADR tooling should validate WH(Y) statements against these rules:
 
 | Rule | Description | Severity |
 |------|-------------|----------|

@@ -1,9 +1,9 @@
-# SPEC-CF3-001-C: ADR Dependencies and Relationships
+# SPEC-001-C: ADR Dependencies and Relationships
 
 | Field | Value |
 |-------|-------|
-| **Specification ID** | SPEC-CF3-001-C |
-| **Parent ADR** | [ADR-CF3-001](../ADR-CF3-001-Enhanced-ADR-Format.md) |
+| **Specification ID** | SPEC-001-C |
+| **Parent ADR** | [ADR-001](../ADR-001-Enhanced-ADR-Format.md) |
 | **Version** | 1.0 |
 | **Status** | Draft |
 | **Last Updated** | 2026-01-08 |
@@ -165,38 +165,38 @@ An ADR is **part of** a Master ADR when it represents one component decision of 
 
 ---
 
-## Implementation in Claude-Flow v3
+## Implementation Guidance
 
 ### Dependency Tracking Commands
 
 ```bash
 # Add dependency when creating ADR
-claude-flow adr new "Kafka Topics" --depends-on=ADR-045
+adr new "Kafka Topics" --depends-on=ADR-045
 
 # Add dependency to existing ADR
-claude-flow adr link ADR-046 --depends-on ADR-045
+adr link ADR-046 --depends-on ADR-045
 
 # Supersede an existing ADR
-claude-flow adr supersede ADR-018 --with ADR-051
+adr supersede ADR-018 --with ADR-051
 
 # View dependencies
-claude-flow adr deps ADR-046
+adr deps ADR-046
 
 # View impact (what depends on this ADR)
-claude-flow adr impact ADR-045
+adr impact ADR-045
 ```
 
 ### Dependency Graph Generation
 
 ```bash
 # Generate Mermaid diagram
-claude-flow adr graph --format=mermaid > adr-dependencies.md
+adr graph --format=mermaid > adr-dependencies.md
 
 # Generate DOT format for Graphviz
-claude-flow adr graph --format=dot > adr-dependencies.dot
+adr graph --format=dot > adr-dependencies.dot
 
 # Interactive HTML view
-claude-flow adr graph --format=html --open
+adr graph --format=html --open
 ```
 
 **Example Output (Mermaid):**
@@ -226,14 +226,14 @@ flowchart TB
 
 ### Impact Analysis
 
-When an ADR status changes, Claude-Flow v3 should:
+When an ADR status changes, tooling should:
 
 1. **Identify affected ADRs** - All ADRs with DEPENDS_ON or REFINES relationships
 2. **Notify stakeholders** - Alert owners of affected ADRs
 3. **Generate impact report** - List all downstream decisions
 
 ```bash
-claude-flow adr impact ADR-032 --depth=3
+adr impact ADR-032 --depth=3
 ```
 
 Output:
